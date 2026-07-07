@@ -26,7 +26,7 @@
 
 ### 2.2 How your team will use those strengths
 
-The team lead will coordinate project planning, task distribution, and overall progress throughout the sprint. Technical responsibilities will be assigned based on each member’s strengths, including AI system design, database management, prompt engineering, implementation, evaluation, and documentation. Team members will collaborate through regular discussions and code reviews to ensure knowledge is shared, everyone contributes meaningfully, and every teammate understands the complete system.
+Our team will distribute the early work based on each member's technical strengths and experience. Bashar (Team Lead) will lead project scoping and system architecture while taking responsibility for the ingestion pipeline, evaluation framework, and backend/frontend integration. Momen and Lana will focus on developing the agent components and supporting backend/frontend implementation, leveraging their programming, system integration, database, and analytical skills. Jumana will lead the retrieval module, applying her structured thinking and prompt engineering expertise to improve retrieval quality. Throughout the project, all team members will collaborate on documentation, testing, and preparing the final executive briefing to ensure consistent quality across all deliverables.
 
 ### 2.3 What each teammate wants to develop
 
