@@ -1,7 +1,7 @@
 """The only module that talks to Weaviate for ingestion. Defines the chunk
 collection schema and upserts/deletes objects by a content-addressed UUID
 (uuid5 of chunk_id), so re-ingesting identical chunk text always maps to the
-same object ID and is never duplicated (ARCHITECTURE.md §4).
+same object ID and is never duplicated.
 """
 
 from __future__ import annotations
