@@ -1,0 +1,17 @@
+.git
+.gitignore
+.env
+frontend/
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+ERRORS.md
+ANALYSIS.md
+RUN.md
+ARCHITECTURE.md
+README.md
+CONTRIBUTING.md
+data/bitext_customer_support.csv
