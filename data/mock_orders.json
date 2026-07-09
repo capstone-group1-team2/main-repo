@@ -1,0 +1,64 @@
+[
+  {
+    "order_id": "ORD-1001",
+    "status": "placed",
+    "order_date": "2026-07-06",
+    "placed_minutes_ago": 15,
+    "shipping_method": "standard",
+    "price": 89.99,
+    "item": "wireless headphones",
+    "customer_contact": "j.smith@example.com",
+    "_demo_tier": "within_1_hour_of_placing -> free cancellation, no fee"
+  },
+  {
+    "order_id": "ORD-1002",
+    "status": "placed",
+    "order_date": "2026-07-04",
+    "placed_minutes_ago": 2880,
+    "shipping_method": "standard",
+    "price": 34.5,
+    "item": "desk lamp",
+    "customer_contact": "a.khan@example.com",
+    "_demo_tier": "after_1_hour_before_shipped -> free cancellation, processed within 1 business day"
+  },
+  {
+    "order_id": "ORD-1003",
+    "status": "shipped",
+    "order_date": "2026-07-01",
+    "shipping_method": "expedited",
+    "price": 120.0,
+    "item": "bluetooth speaker",
+    "customer_contact": "m.rossi@example.com",
+    "_demo_tier": "after_shipped_before_delivery -> 10% restocking fee deducted from refund"
+  },
+  {
+    "order_id": "ORD-1004",
+    "status": "delivered",
+    "order_date": "2026-06-20",
+    "shipping_method": "standard",
+    "price": 55.0,
+    "item": "yoga mat",
+    "customer_contact": "l.chen@example.com",
+    "_demo_tier": "after_delivery -> cancellation unavailable, use the 30-day return process instead"
+  },
+  {
+    "order_id": "ORD-1005",
+    "status": "cancelled",
+    "order_date": "2026-06-15",
+    "shipping_method": "overnight",
+    "price": 200.0,
+    "item": "espresso machine",
+    "customer_contact": "d.brown@example.com",
+    "_demo_tier": "edge_case -> order already cancelled"
+  },
+  {
+    "order_id": "ORD-1006",
+    "status": "shipped",
+    "order_date": "2026-07-03",
+    "shipping_method": "in_store_pickup",
+    "price": 15.0,
+    "item": "phone case",
+    "customer_contact": "s.patel@example.com",
+    "_demo_tier": "track_order_eta_demo -> in-store pickup, no shipping ETA"
+  }
+]
