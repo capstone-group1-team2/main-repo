@@ -1,6 +1,6 @@
 """Splits a corpus markdown document into semantically coherent chunks.
 
-Hierarchy: heading -> paragraph -> sentence, per ARCHITECTURE.md §4.
+Hierarchy: heading -> paragraph -> sentence,
 `##` headings are always a hard chunk boundary (each is already a coherent
 policy topic, e.g. "## How to Cancel an Order"). Within a heading section,
 sentences are grouped using an embedding-similarity breakpoint search — the
