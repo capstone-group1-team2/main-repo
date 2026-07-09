@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+node_modules/
+.next/
+*.tsbuildinfo
+npm-debug.log*
+.env
+.env.local
+.env.*.local
+.DS_Store
+*.swp
+*.log
