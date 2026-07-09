@@ -11,9 +11,7 @@ Self-healing: an unchanged file's chunk_ids are also checked against what's
 actually present in Weaviate and Neo4j before trusting the fast-path skip.
 If either store was reset independently of hash_store.json (e.g. `docker
 volume rm` on just one of them), the affected file is reprocessed even
-though its content hash still matches — this is what makes ARCHITECTURE.md
-§4.1's "wipe the volume, re-run, get an identical graph back" claim actually
-true, not just true when hash_store.json happens to be wiped too.
+though its content hash still matches 
 """
 
 from __future__ import annotations
