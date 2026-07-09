@@ -1,5 +1,5 @@
-"""The ONLY module in this codebase that writes to Neo4j (ARCHITECTURE.md
-§4.1). Every write goes through parameterized Cypher via the driver —
+"""The ONLY module in this codebase that writes to Neo4j . 
+Every write goes through parameterized Cypher via the driver —
 nothing here is ever typed by hand into Neo4j Browser, and no other module
 imports the neo4j driver.
 """
