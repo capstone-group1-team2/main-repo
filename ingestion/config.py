@@ -1,7 +1,7 @@
 """Loads and validates every environment variable the ingestion pipeline needs.
 
 This module and app/config.py are the ONLY two places in this codebase
-allowed to read os.environ directly (see ARCHITECTURE.md §10.1). Every
+allowed to read os.environ directly. Every
 ingestion module (chunker, embedder, hash_store, weaviate_loader,
 graph_builder, ingest) imports its settings from here.
 """
