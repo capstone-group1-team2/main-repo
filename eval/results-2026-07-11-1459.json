@@ -1,0 +1,1010 @@
+{
+  "primary_metric": "routing_accuracy",
+  "run_at": "2026-07-11T11:59:39.111456+00:00",
+  "n_examples": 5,
+  "seeds": [
+    42,
+    1337,
+    2024
+  ],
+  "summary": {
+    "agent": {
+      "routing_accuracy": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n_seeds": 3,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "escalation_precision": {
+        "mean": null,
+        "std": null,
+        "n_seeds": 0,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      "escalation_recall": {
+        "mean": null,
+        "std": null,
+        "n_seeds": 0,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      "escalation_f1": {
+        "mean": null,
+        "std": null,
+        "n_seeds": 0,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      "answer_attempt_groundedness": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n_seeds": 3,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "groundedness_rate": {
+        "mean": 0.9166666666666666,
+        "std": 0.11785113019775792,
+        "n_seeds": 3,
+        "values": [
+          1.0,
+          0.75,
+          1.0
+        ]
+      },
+      "recall_at_k": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n_seeds": 3,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "answer_match_rate": {
+        "mean": 0.9166666666666666,
+        "std": 0.11785113019775792,
+        "n_seeds": 3,
+        "values": [
+          1.0,
+          0.75,
+          1.0
+        ]
+      }
+    },
+    "baseline": {
+      "routing_accuracy": {
+        "mean": 0.8000000000000002,
+        "std": 1.1102230246251565e-16,
+        "n_seeds": 3,
+        "values": [
+          0.8,
+          0.8,
+          0.8
+        ]
+      },
+      "escalation_precision": {
+        "mean": null,
+        "std": null,
+        "n_seeds": 0,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      "escalation_recall": {
+        "mean": null,
+        "std": null,
+        "n_seeds": 0,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      "escalation_f1": {
+        "mean": null,
+        "std": null,
+        "n_seeds": 0,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      "answer_attempt_groundedness": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n_seeds": 3,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "groundedness_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n_seeds": 3,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "recall_at_k": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n_seeds": 3,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "answer_match_rate": {
+        "mean": 0.8000000000000002,
+        "std": 1.1102230246251565e-16,
+        "n_seeds": 3,
+        "values": [
+          0.8,
+          0.8,
+          0.8
+        ]
+      }
+    }
+  },
+  "latency": {
+    "agent_first_turn": {
+      "p50": 5.951599600026384,
+      "p95": 19.921359439962544,
+      "max": 20.530861899955198,
+      "mean": 10.561534699983895,
+      "pct_under_target": 0.2,
+      "n": 15
+    },
+    "agent_full_conversation": {
+      "p50": 17.382944899844006,
+      "p95": 21.81827115016058,
+      "max": 22.602473800070584,
+      "mean": 12.85308336665233,
+      "pct_under_target": 0.2,
+      "n": 15
+    },
+    "baseline": {
+      "p50": 10.067643800051883,
+      "p95": 12.87127377006691,
+      "max": 12.885929600102827,
+      "mean": 9.224342500014851,
+      "pct_under_target": 0.0,
+      "n": 15
+    }
+  },
+  "escalation_reasons": {},
+  "success_criteria": [
+    {
+      "criterion": "C1  Routing accuracy >= 0.85",
+      "target": 0.85,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "criterion": "C2  Groundedness >= 0.90",
+      "target": 0.9,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "criterion": "C3  Latency p95 < 3.0s (optional)",
+      "target": 3.0,
+      "observed": 19.921359439962544,
+      "passed": false
+    }
+  ],
+  "error_grid": {
+    "CANCEL|easy": {
+      "correct": 9,
+      "wrong": 0,
+      "n": 9,
+      "error_rate": 0.0
+    },
+    "CANCEL|medium": {
+      "correct": 6,
+      "wrong": 0,
+      "n": 6,
+      "error_rate": 0.0
+    }
+  },
+  "per_seed": {
+    "42": {
+      "agent": [
+        {
+          "id": "hold-0001",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to our Cancellation Fee Policy, if you cancel your order after it has shipped but before delivery, a 10% restocking fee applies, which will be deducted from your refund.",
+          "intent": "check_cancellation_fee",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.7290892601013184,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": true,
+          "grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 1.3547587001230568,
+          "total_latency_s": 1.3547587001230568,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "How much is the fee if I cancel after my order has already shipped?",
+              "route": "information",
+              "detail": "According to our Cancellation Fee Policy, if you cancel your order after it has shipped but before delivery, a 10% restocking fee applies, which will be deducted from your refund.",
+              "latency_s": 1.3547587001230568
+            }
+          ]
+        },
+        {
+          "id": "hold-0002",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to our Cancellation Fee Policy, if you cancel your order within 1 hour of placing the order, there is no cancellation fee.",
+          "intent": "check_cancellation_fee",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.7063422203063965,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": true,
+          "grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 1.0671782998833805,
+          "total_latency_s": 1.0671782998833805,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "If I change my mind ten minutes after placing an order, do I get charged anything to cancel?",
+              "route": "information",
+              "detail": "According to our Cancellation Fee Policy, if you cancel your order within 1 hour of placing the order, there is no cancellation fee.",
+              "latency_s": 1.0671782998833805
+            }
+          ]
+        },
+        {
+          "id": "hold-0003",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "I'm unable to assist you with finding your order number without more information. The policy excerpts do not provide a method for retrieving your order number if you don't have it.",
+          "intent": "contact_customer_service",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.6104621887207031,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 2,
+          "answer_grounded": true,
+          "grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 0.45144199999049306,
+          "total_latency_s": 1.4501723998691887,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "Can I still cancel once the package has been delivered?",
+              "route": "action",
+              "detail": "Before I can help with that, could you share your order number?",
+              "latency_s": 0.45144199999049306
+            },
+            {
+              "sent": "I don't have the order number.",
+              "route": "information",
+              "detail": "I'm unable to assist you with finding your order number without more information. The policy excerpts do not provide a method for retrieving your order number if you don't have it.",
+              "latency_s": 0.9987303998786956
+            }
+          ]
+        },
+        {
+          "id": "hold-0004",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "To view the cancellation fee for a specific order, you can access My Orders in your account settings and select the order in question. The Cancel Order screen will show you the exact fee, if any, based on the order's current shipping status.",
+          "intent": "check_cancellation_fee",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.7901359796524048,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": true,
+          "grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 16.683454800164327,
+          "total_latency_s": 16.683454800164327,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "Where in my account do I go to see the cancellation fee for a specific order?",
+              "route": "information",
+              "detail": "To view the cancellation fee for a specific order, you can access My Orders in your account settings and select the order in question. The Cancel Order screen will show you the exact fee, if any, based on the order's current shipping status.",
+              "latency_s": 16.683454800164327
+            }
+          ]
+        },
+        {
+          "id": "hold-0005",
+          "expected_route": "action",
+          "predicted_route": "action",
+          "detail": "Your order was placed within the last hour, so it's been cancelled for free with no fee.",
+          "intent": "cancel_order",
+          "intent_confidence": 1.0,
+          "retrieval_confidence": 0.6888527274131775,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": null,
+          "grounded": null,
+          "recall_hit": null,
+          "answer_match": null,
+          "first_turn_latency_s": 5.789530099835247,
+          "total_latency_s": 5.789530099835247,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": null
+          },
+          "transcript": [
+            {
+              "sent": "Please cancel order ORD-1001.",
+              "route": "action",
+              "detail": "Your order was placed within the last hour, so it's been cancelled for free with no fee.",
+              "latency_s": 5.789530099835247
+            }
+          ]
+        }
+      ],
+      "baseline": [
+        {
+          "id": "hold-0001",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to our Cancellation Fee Policy, if you cancel your order after it has shipped but before delivery, a 10% restocking fee applies, which will be deducted from your refund.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 8.79454950010404,
+          "total_latency_s": 8.79454950010404,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0002",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to our Cancellation Fee Policy, if you cancel your order within 1 hour of placing the order, there is no cancellation fee.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 12.864992700051516,
+          "total_latency_s": 12.864992700051516,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0003",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to the Cancellation Fee Policy, once the order has been delivered, cancellation is no longer available through this process. You would need to use the standard 30-day return and refund process instead.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 10.898870900040492,
+          "total_latency_s": 10.898870900040492,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0004",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "To view the cancellation fee for a specific order, you can access My Orders in your account settings and select the order in question. The Cancel Order screen will show you the exact fee, if any, based on the order's current shipping status.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 10.080748199950904,
+          "total_latency_s": 10.080748199950904,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0005",
+          "expected_route": "action",
+          "predicted_route": "information",
+          "detail": "To cancel your order ORD-1001, please follow these steps:\n\n1. Log in to your online account portal using your credentials.\n2. Navigate to the \"My Orders\" section.\n3. Locate the order ORD-1001 and click on it to view the details.\n4. Look for the \"Cancel Order\" option associated with the order.\n5. Click on \"Cancel Order\" to initiate the cancellation process.\n\nPlease note that any applicable fee is shown before you confirm. If you encounter any issues or need further assistance, please contact our dedicated support team at 1-800-555-0199 or through the Live Chat option on www.meridianretail.com.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": null,
+          "answer_match": false,
+          "first_turn_latency_s": 4.809101099846885,
+          "total_latency_s": 4.809101099846885,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": null
+          }
+        }
+      ]
+    },
+    "1337": {
+      "agent": [
+        {
+          "id": "hold-0001",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to our Cancellation Fee Policy, if you cancel your order after it has shipped but before delivery, a 10% restocking fee applies, which will be deducted from your refund.",
+          "intent": "check_cancellation_fee",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.7290892601013184,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": true,
+          "grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 17.417157700052485,
+          "total_latency_s": 17.417157700052485,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "How much is the fee if I cancel after my order has already shipped?",
+              "route": "information",
+              "detail": "According to our Cancellation Fee Policy, if you cancel your order after it has shipped but before delivery, a 10% restocking fee applies, which will be deducted from your refund.",
+              "latency_s": 17.417157700052485
+            }
+          ]
+        },
+        {
+          "id": "hold-0002",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to our Cancellation Fee Policy, if you cancel your order within 1 hour of placing the order, there is no cancellation fee.",
+          "intent": "check_cancellation_fee",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.7063422203063965,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": true,
+          "grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 20.530861899955198,
+          "total_latency_s": 20.530861899955198,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "If I change my mind ten minutes after placing an order, do I get charged anything to cancel?",
+              "route": "information",
+              "detail": "According to our Cancellation Fee Policy, if you cancel your order within 1 hour of placing the order, there is no cancellation fee.",
+              "latency_s": 20.530861899955198
+            }
+          ]
+        },
+        {
+          "id": "hold-0003",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "Unfortunately, the provided policy excerpts do not offer a solution for finding an order number without the invoice number.",
+          "intent": "contact_customer_service",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.6104621887207031,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 2,
+          "answer_grounded": true,
+          "grounded": false,
+          "recall_hit": true,
+          "answer_match": false,
+          "first_turn_latency_s": 5.951599600026384,
+          "total_latency_s": 22.602473800070584,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "Can I still cancel once the package has been delivered?",
+              "route": "action",
+              "detail": "Before I can help with that, could you share your order number?",
+              "latency_s": 5.951599600026384
+            },
+            {
+              "sent": "I don't have the order number.",
+              "route": "information",
+              "detail": "Unfortunately, the provided policy excerpts do not offer a solution for finding an order number without the invoice number.",
+              "latency_s": 16.6508742000442
+            }
+          ]
+        },
+        {
+          "id": "hold-0004",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "To view the cancellation fee for a specific order, you can access My Orders in your account settings and select the order in question. The Cancel Order screen will show you the exact fee, if any, based on the order's current shipping status.",
+          "intent": "check_cancellation_fee",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.7901359796524048,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": true,
+          "grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 17.507971999933943,
+          "total_latency_s": 17.507971999933943,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "Where in my account do I go to see the cancellation fee for a specific order?",
+              "route": "information",
+              "detail": "To view the cancellation fee for a specific order, you can access My Orders in your account settings and select the order in question. The Cancel Order screen will show you the exact fee, if any, based on the order's current shipping status.",
+              "latency_s": 17.507971999933943
+            }
+          ]
+        },
+        {
+          "id": "hold-0005",
+          "expected_route": "action",
+          "predicted_route": "action",
+          "detail": "Your order was placed within the last hour, so it's been cancelled for free with no fee.",
+          "intent": "cancel_order",
+          "intent_confidence": 1.0,
+          "retrieval_confidence": 0.6888527274131775,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": null,
+          "grounded": null,
+          "recall_hit": null,
+          "answer_match": null,
+          "first_turn_latency_s": 5.558414700208232,
+          "total_latency_s": 5.558414700208232,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": null
+          },
+          "transcript": [
+            {
+              "sent": "Please cancel order ORD-1001.",
+              "route": "action",
+              "detail": "Your order was placed within the last hour, so it's been cancelled for free with no fee.",
+              "latency_s": 5.558414700208232
+            }
+          ]
+        }
+      ],
+      "baseline": [
+        {
+          "id": "hold-0001",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to our Cancellation Fee Policy, if you cancel your order after it has shipped but before delivery, a 10% restocking fee applies, which will be deducted from your refund.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 4.675815999973565,
+          "total_latency_s": 4.675815999973565,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0002",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to our Cancellation Fee Policy, if you cancel your order within 1 hour of placing it, there is no cancellation fee.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 11.80978690017946,
+          "total_latency_s": 11.80978690017946,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0003",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to the Cancellation Fee Policy, once the package has been delivered, cancellation is no longer available through this process. You would need to use the standard 30-day return and refund process instead.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 11.167424599872902,
+          "total_latency_s": 11.167424599872902,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0004",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "To view the cancellation fee for a specific order, you can access My Orders in your account settings and select the order in question. The Cancel Order screen will show you the exact fee, if any, based on the order's current shipping status.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 9.984841999830678,
+          "total_latency_s": 9.984841999830678,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0005",
+          "expected_route": "action",
+          "predicted_route": "information",
+          "detail": "I don't have the information to cancel your order directly. To cancel your order, please follow these steps:\n\n1. Log in to your online account portal using your credentials.\n2. Navigate to the \"My Orders\" section.\n3. Locate the order you'd like to cancel (ORD-1001).\n4. Click on the order to view the details.\n5. Look for the \"Cancel Order\" option associated with the order.\n6. Click on \"Cancel Order\" to initiate the cancellation process.\n\nIf you encounter any issues or need further assistance, please contact our dedicated support team at 1-800-555-0199 or through the Live Chat option on www.meridianretail.com.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": null,
+          "answer_match": false,
+          "first_turn_latency_s": 5.341079000150785,
+          "total_latency_s": 5.341079000150785,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": null
+          }
+        }
+      ]
+    },
+    "2024": {
+      "agent": [
+        {
+          "id": "hold-0001",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to the Cancellation Fee Policy, if you cancel your order after it has shipped but before delivery, a 10% restocking fee applies, which will be deducted from your refund.",
+          "intent": "check_cancellation_fee",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.7290892601013184,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": true,
+          "grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 17.382944899844006,
+          "total_latency_s": 17.382944899844006,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "How much is the fee if I cancel after my order has already shipped?",
+              "route": "information",
+              "detail": "According to the Cancellation Fee Policy, if you cancel your order after it has shipped but before delivery, a 10% restocking fee applies, which will be deducted from your refund.",
+              "latency_s": 17.382944899844006
+            }
+          ]
+        },
+        {
+          "id": "hold-0002",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to our Cancellation Fee Policy, if you change your mind within 1 hour of placing the order, cancellation is free, with no fee, no questions asked.",
+          "intent": "check_cancellation_fee",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.7063422203063965,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": true,
+          "grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 18.648832599865273,
+          "total_latency_s": 18.648832599865273,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "If I change my mind ten minutes after placing an order, do I get charged anything to cancel?",
+              "route": "information",
+              "detail": "According to our Cancellation Fee Policy, if you change your mind within 1 hour of placing the order, cancellation is free, with no fee, no questions asked.",
+              "latency_s": 18.648832599865273
+            }
+          ]
+        },
+        {
+          "id": "hold-0003",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "I'm not able to assist you with finding your order number based on the provided policy excerpts. The excerpts do not mention how to find an order number if you don't have it.",
+          "intent": "contact_customer_service",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.6104621887207031,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 2,
+          "answer_grounded": true,
+          "grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 4.758558900095522,
+          "total_latency_s": 21.48218430019915,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "Can I still cancel once the package has been delivered?",
+              "route": "action",
+              "detail": "Before I can help with that, could you share your order number?",
+              "latency_s": 4.758558900095522
+            },
+            {
+              "sent": "I don't have the order number.",
+              "route": "information",
+              "detail": "I'm not able to assist you with finding your order number based on the provided policy excerpts. The excerpts do not mention how to find an order number if you don't have it.",
+              "latency_s": 16.72362540010363
+            }
+          ]
+        },
+        {
+          "id": "hold-0004",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "To view the cancellation fee for a specific order, you can access My Orders in your account settings and select the order in question. The Cancel Order screen will show you the exact fee, if any, based on the order's current shipping status.",
+          "intent": "check_cancellation_fee",
+          "intent_confidence": 0.8,
+          "retrieval_confidence": 0.7901359796524048,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": true,
+          "grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 19.66014409996569,
+          "total_latency_s": 19.66014409996569,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          },
+          "transcript": [
+            {
+              "sent": "Where in my account do I go to see the cancellation fee for a specific order?",
+              "route": "information",
+              "detail": "To view the cancellation fee for a specific order, you can access My Orders in your account settings and select the order in question. The Cancel Order screen will show you the exact fee, if any, based on the order's current shipping status.",
+              "latency_s": 19.66014409996569
+            }
+          ]
+        },
+        {
+          "id": "hold-0005",
+          "expected_route": "action",
+          "predicted_route": "action",
+          "detail": "Your order was placed within the last hour, so it's been cancelled for free with no fee.",
+          "intent": "cancel_order",
+          "intent_confidence": 1.0,
+          "retrieval_confidence": 0.6888527274131775,
+          "escalation_id": null,
+          "reason": null,
+          "turns": 1,
+          "answer_grounded": null,
+          "grounded": null,
+          "recall_hit": null,
+          "answer_match": null,
+          "first_turn_latency_s": 5.660170199815184,
+          "total_latency_s": 5.660170199815184,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": null
+          },
+          "transcript": [
+            {
+              "sent": "Please cancel order ORD-1001.",
+              "route": "action",
+              "detail": "Your order was placed within the last hour, so it's been cancelled for free with no fee.",
+              "latency_s": 5.660170199815184
+            }
+          ]
+        }
+      ],
+      "baseline": [
+        {
+          "id": "hold-0001",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to our Cancellation Fee Policy, if you cancel your order after it has shipped but before delivery, a 10% restocking fee applies, deducted from your refund.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 9.924095399910584,
+          "total_latency_s": 9.924095399910584,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0002",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to our Cancellation Fee Policy, if you cancel your order within 1 hour of placing it, there is no cancellation fee.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 12.885929600102827,
+          "total_latency_s": 12.885929600102827,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0003",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "According to the provided policy excerpts, after delivery, cancellation is no longer available through the standard process. However, you can use the standard 30-day return and refund process instead.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 10.104915800038725,
+          "total_latency_s": 10.104915800038725,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "medium",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0004",
+          "expected_route": "information",
+          "predicted_route": "information",
+          "detail": "To view the cancellation fee for a specific order, you can access My Orders in your account settings and select the order in question. The Cancel Order screen will show you the exact fee, if any, based on the order's current shipping status.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": true,
+          "answer_match": true,
+          "first_turn_latency_s": 10.067643800051883,
+          "total_latency_s": 10.067643800051883,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": "cancel.md"
+          }
+        },
+        {
+          "id": "hold-0005",
+          "expected_route": "action",
+          "predicted_route": "information",
+          "detail": "I don't have the information to cancel your order. To cancel your order, please follow these steps:\n\n1. Log in to your online account portal using your credentials.\n2. Navigate to the \"My Orders\" section.\n3. Locate the order you'd like to cancel (ORD-1001).\n4. Click on the order to view the details.\n5. Look for the \"Cancel Order\" option associated with the order.\n6. Click on \"Cancel Order\" to initiate the cancellation process.\n\nIf you encounter any issues or need further assistance, please don't hesitate to reach out to our dedicated support team Monday–Friday, 9 AM–7 PM EST. They can be contacted at 1-800-555-0199 or through the Live Chat option on www.meridianretail.com.",
+          "reason": null,
+          "grounded": true,
+          "answer_grounded": true,
+          "recall_hit": null,
+          "answer_match": false,
+          "first_turn_latency_s": 4.9553420001175255,
+          "total_latency_s": 4.9553420001175255,
+          "metadata": {
+            "category": "CANCEL",
+            "difficulty": "easy",
+            "expected_source_file": null
+          }
+        }
+      ]
+    }
+  }
+}
