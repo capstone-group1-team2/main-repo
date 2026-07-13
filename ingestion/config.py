@@ -53,3 +53,6 @@ WEAVIATE_COLLECTION_NAME = os.environ.get("WEAVIATE_COLLECTION_NAME", "Chunk")
 NEO4J_URI = _require("NEO4J_URI")
 NEO4J_USERNAME = _require("NEO4J_USERNAME")
 NEO4J_PASSWORD = _require("NEO4J_PASSWORD")
+
+# --- Logging -----------------------------------------------------------------
+LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO")
