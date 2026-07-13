@@ -30,6 +30,9 @@ from ingestion.embedder import Embedder
 from retrieval.graph_retriever import GraphRetriever
 from retrieval.hybrid_retriever import HybridRetriever
 from retrieval.weaviate_retriever import WeaviateRetriever
+from logging_config import configure_logging
+
+configure_logging(cfg.LOG_LEVEL)
 
 _METRICS_REGISTRY = CollectorRegistry()
 _GROQ_DAILY_CALLS = Gauge(
