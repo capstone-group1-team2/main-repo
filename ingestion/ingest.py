@@ -20,13 +20,14 @@ import logging
 import os
 
 from ingestion.chunker import chunk_corpus_file
-from ingestion.config import CORPUS_DIR, HASH_STORE_PATH
+from ingestion.config import CORPUS_DIR, HASH_STORE_PATH, LOG_LEVEL
 from ingestion.embedder import Embedder
 from ingestion.graph_builder import GraphBuilder
 from ingestion.hash_store import FileDiff, HashStore, file_hash
 from ingestion.weaviate_loader import WeaviateLoader
+from logging_config import configure_logging
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+configure_logging(LOG_LEVEL)
 logger = logging.getLogger("ingestion.ingest")
 
 

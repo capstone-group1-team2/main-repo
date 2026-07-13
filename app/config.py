@@ -116,3 +116,6 @@ MOCK_ORDERS_PATH = os.environ.get("MOCK_ORDERS_PATH", "data/mock_orders.json")
 CORS_ORIGINS = os.environ.get("CORS_ORIGINS", "http://localhost:3000").split(",")
 BACKEND_HOST = os.environ.get("BACKEND_HOST", "0.0.0.0")
 BACKEND_PORT = int(os.environ.get("BACKEND_PORT", 8000))
+
+# --- Logging -------------------------------------------------------------
+LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO")
