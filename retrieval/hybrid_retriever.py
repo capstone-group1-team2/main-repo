@@ -18,6 +18,10 @@ from dataclasses import dataclass, field
 from rank_bm25 import BM25Okapi
 
 from app.config import MIN_CONFIDENCE_HIGH, MIN_CONFIDENCE_MED, RETRIEVAL_TOP_K
+import logging
+
+
+logger = logging.getLogger("retrieval.hybrid_retriever")
 
 _RRF_K = 60
 _TOKEN_RE = re.compile(r"[a-z0-9]+")
@@ -133,9 +137,15 @@ class HybridRetriever:
         Groq call to rewrite the query. Exact signature is a cross-milestone
         interface: agent/agent.py (M4) calls this directly per §15.
         """
+        
         first_pass_categories = {c.category for c in first_pass_chunks}
         related = self.graph.related_categories(first_pass_categories)
 
+        logger.info(
+        "broaden_via_graph: first-pass categories=%s -> related=%s",
+        sorted(first_pass_categories), sorted(related),
+    )
+        
         pool_size = self.top_k * 3
         dense_chunks = self.vec.search(original_query, top_k=pool_size)
         dense_by_id = {c.chunk_id: c for c in dense_chunks}
@@ -155,4 +165,9 @@ class HybridRetriever:
         top_dense_score = dense_chunks[0].score if dense_chunks else 0.0
         bm25_max_score = max(bm25_scores) if len(bm25_scores) else 0.0
 
-        return self._build_result(fused_ids, chunks_by_id, top_dense_score, bm25_max_score)
+        result = self._build_result(fused_ids, chunks_by_id, top_dense_score, bm25_max_score)
+        logger.info(
+            "broaden_via_graph: returned %d chunks, confidence=%s, top_dense_score=%.4f",
+            len(result.chunks), result.confidence, result.top_dense_score,
+        )
+        return result
